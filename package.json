@@ -14,8 +14,7 @@
 		},
     "./index.css": "./dist/index.css",
     "./dist/*": "./dist/*" ,
-		"./styles.css": "./dist/style.css",
-    
+		"./styles.css": "./dist/style.css"
 	},
 	"files": [
 		"dist",
