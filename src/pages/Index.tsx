@@ -7,7 +7,7 @@ const Index = () => {
 			<div className="max-w-6xl mx-auto space-y-8">
 				<div className="text-center space-y-4">
 					<h1 className="text-5xl font-bold text-foreground">
-						React VLC Video Player
+						Aura Video Player
 					</h1>
 					<p className="text-xl text-muted-foreground max-w-2xl mx-auto">
 						A full-featured video player component with VLC-like
@@ -138,7 +138,7 @@ function App() {
 				</Card>
 
 				<div className="text-center text-sm text-muted-foreground">
-					<p>Built with React, TypeScript, and Tailwind CSS</p>
+					<p>© 2022 Aura Video Player by Md Irfanul Alam</p>
 				</div>
 			</div>
 		</div>

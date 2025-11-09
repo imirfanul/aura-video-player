@@ -1,73 +1,93 @@
-# React + TypeScript + Vite
+# Aura Video Player
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A professional React video player component with advanced features including filters, playlists, adaptive streaming (HLS/DASH), subtitles, chapter markers, and full keyboard controls.
 
-Currently, two official plugins are available:
+**Developed by Md Irfanul Alam**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- 🎬 **Full Playback Controls** - Play, pause, seek, volume, playback speed
+- 🎨 **Video Filters** - Brightness, contrast, saturation, hue, blur, grayscale
+- 📝 **Subtitle Support** - SRT & VTT parsing with customizable styling
+- 📋 **Playlist Management** - Queue, shuffle, repeat modes
+- 🎯 **Chapter Markers** - Navigate video sections with visual timeline
+- 🎥 **Quality Selection** - HLS/DASH adaptive streaming support
+- 🖼️ **Thumbnail Preview** - Hover seek bar for frame previews
+- ⌨️ **Keyboard Shortcuts** - Complete keyboard navigation
+- 📱 **Picture-in-Picture** - Watch while multitasking
+- 🖥️ **Fullscreen** - Immersive viewing experience
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## Installation
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install aura-video-player
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Usage
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```tsx
+import { VideoPlayer } from 'aura-video-player';
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+function App() {
+  return (
+    <VideoPlayer
+      src="video.mp4"
+      poster="thumbnail.jpg"
+      subtitles={[
+        {
+          label: 'English',
+          language: 'en',
+          src: 'subtitles-en.srt'
+        }
+      ]}
+      playlist={[
+        { id: '1', title: 'Video 1', src: 'video1.mp4' },
+        { id: '2', title: 'Video 2', src: 'video2.mp4' }
+      ]}
+      chapters={[
+        { time: 0, title: 'Introduction' },
+        { time: 60, title: 'Main Content' }
+      ]}
+      onPlay={() => console.log('Playing')}
+    />
+  );
+}
 ```
+
+## Keyboard Shortcuts
+
+- `Space` - Play/Pause
+- `←/→` - Seek 10 seconds
+- `↑/↓` - Volume up/down
+- `M` - Mute/Unmute
+- `C` - Toggle subtitles
+- `F` - Fullscreen
+- `P` - Picture-in-Picture
+
+## Technologies
+
+Built with React, TypeScript, Tailwind CSS, and HLS.js
+
+## Project Development
+
+**URL**: https://lovable.dev/projects/c797951c-2a1d-4a4d-9da9-82ec030c5a03
+
+### Local Development
+
+```sh
+# Clone the repository
+git clone <YOUR_GIT_URL>
+
+# Navigate to project
+cd <YOUR_PROJECT_NAME>
+
+# Install dependencies
+npm i
+
+# Start dev server
+npm run dev
+```
+
+## License
+
+© 2024 Aura Video Player by Md Irfanul Alam
