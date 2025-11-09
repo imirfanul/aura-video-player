@@ -1,7 +1,7 @@
 {
 	"name": "aura-video-player",
 	"private": false,
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"type": "module",
 	"description": "A professional React video player component with advanced features including filters, playlists, adaptive streaming (HLS/DASH), subtitles, chapter markers, and full keyboard controls.",
 	"main": "./dist/index.js",
