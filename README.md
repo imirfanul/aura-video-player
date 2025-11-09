@@ -70,7 +70,7 @@ Built with React, TypeScript, Tailwind CSS, and HLS.js
 
 ## Project Development
 
-**URL**: https://lovable.dev/projects/c797951c-2a1d-4a4d-9da9-82ec030c5a03
+**URL**: https://69102599824cacef42c9c563--aura-video-player.netlify.app/
 
 ### Local Development
 
