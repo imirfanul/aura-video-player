@@ -12,7 +12,10 @@
 			"import": "./dist/index.js",
 			"types": "./dist/index.d.ts"
 		},
-		"./styles.css": "./dist/style.css"
+    "./index.css": "./dist/index.css",
+    "./dist/*": "./dist/*" ,
+		"./styles.css": "./dist/style.css",
+    
 	},
 	"files": [
 		"dist",
@@ -21,7 +24,8 @@
 	],
 	"scripts": {
 		"dev": "vite",
-		"build": "tsc && vite build",
+		"build:css": "tailwindcss -i ./src/styles.css -o ./dist/index.css --minify",
+		"build": "tsc && vite build && npm run build:css",
 		"build:dev": "vite build --mode development",
 		"lint": "eslint .",
 		"preview": "vite preview",
@@ -111,7 +115,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "git+ssh://git@github.com:imirfanul/aura-video-player.git"
+		"url": "git+ssh://git@github.com/imirfanul/aura-video-player.git"
 	},
 	"bugs": {
 		"url": "https://github.com/imirfanul/aura-video-player.git/issues"
