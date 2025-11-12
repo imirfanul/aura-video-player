@@ -20,10 +20,9 @@
 	"scripts": {
 		"dev": "vite",
 		"clean": "rimraf dist",
-		"build:css": "tailwindcss -i ./src/styles.css -o ./dist/index.css --minify",
 		"build:dev": "vite build --mode development",
 		"lint": "eslint .",
-		"build": "tsup && cpx \"src/**/*.css\" dist",
+		"build": "vite build",
 		"preview": "vite preview",
 		"prepublishOnly": "npm run build"
 	},

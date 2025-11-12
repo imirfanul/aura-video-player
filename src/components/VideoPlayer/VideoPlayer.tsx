@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import '../../styles.css';
 import { VideoControls } from './VideoControls';
 import { VideoSettings } from './VideoSettings';
 import { useVideoPlayer } from './useVideoPlayer';
@@ -310,15 +311,13 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
   return (
     <div
       ref={containerRef}
-      className={`relative w-full bg-player-bg overflow-hidden group ${className}`}
-      style={{ aspectRatio: '16/9' }}
+      className={`aura-video-player ${className}`}
     >
       <video
         ref={videoRef}
         src={!isHls ? currentSrc : undefined}
         poster={poster || currentItem?.poster}
         loop={loop}
-        className="w-full h-full object-contain"
         onClick={togglePlay}
         crossOrigin="anonymous"
       />
@@ -331,12 +330,12 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
       {/* Center play button overlay */}
       {!isPlaying && (
         <div
-          className="absolute inset-0 flex items-center justify-center bg-player-overlay/30 cursor-pointer transition-opacity"
+          className="video-overlay"
           onClick={togglePlay}
         >
-          <div className="w-20 h-20 rounded-full bg-primary/90 flex items-center justify-center hover:bg-primary hover:scale-110 transition-all">
+          <div className="play-button-container">
             <svg
-              className="w-10 h-10 text-primary-foreground ml-1"
+              className="play-button-icon"
               fill="currentColor"
               viewBox="0 0 24 24"
             >
@@ -348,8 +347,8 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
 
       {/* Controls */}
       <div
-        className={`absolute bottom-0 left-0 right-0 transition-opacity duration-300 ${
-          showControls || !isPlaying ? 'opacity-100' : 'opacity-0'
+        className={`video-controls ${
+          showControls || !isPlaying ? '' : 'hidden'
         }`}
       >
         <VideoControls
